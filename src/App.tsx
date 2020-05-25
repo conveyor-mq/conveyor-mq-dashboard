@@ -1,27 +1,21 @@
-import React from "react";
-import { TaskList } from "./tasks/task-list";
-import { Task } from "./tasks/task";
-import { Container } from "semantic-ui-react";
-
-const tasks: Task[] = [
-  {
-    id: "some-id",
-    createdAt: new Date(),
-    queuedAt: new Date(),
-    data: "x",
-  },
-  {
-    id: "some-other-id",
-    createdAt: new Date(),
-    queuedAt: new Date(),
-    data: "x",
-  },
-];
+import React, { useState, useEffect } from "react";
+import { Container, Header } from "semantic-ui-react";
+import { QueueList } from "./queues/queue-list";
+import { Queue } from "./queues/queue";
+import { getQueues } from "./queues/actions/get-queues";
 
 export const App = () => {
+  const [queues, setQueues] = useState<Queue[]>([]);
+  useEffect(() => {
+    const fetchQueues = async () => {
+      setQueues(await getQueues());
+    };
+    fetchQueues();
+  }, []);
   return (
-    <Container>
-      <TaskList tasks={tasks} />
+    <Container fluid style={{ padding: "30px" }}>
+      <Header size="huge">ConveyorMQ Dashboard</Header>
+      <QueueList queues={queues} />
     </Container>
   );
 };
