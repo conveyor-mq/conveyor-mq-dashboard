@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { TaskList } from "./tasks/task-list";
+import { Task } from "./tasks/task";
+import { Container } from "semantic-ui-react";
 
-function App() {
+const tasks: Task[] = [
+  {
+    id: "some-id",
+    createdAt: new Date(),
+    queuedAt: new Date(),
+    data: "x",
+  },
+  {
+    id: "some-other-id",
+    createdAt: new Date(),
+    queuedAt: new Date(),
+    data: "x",
+  },
+];
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <TaskList tasks={tasks} />
+    </Container>
   );
-}
-
-export default App;
+};
