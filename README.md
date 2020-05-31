@@ -1,1 +1,1 @@
-# ConveyorMQ Dashboard
+# Conveyor MQ Dashboard
