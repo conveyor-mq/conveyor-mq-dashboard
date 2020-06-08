@@ -1,9 +1,9 @@
-import { TaskCount } from "../domain/task-counts";
+import { TaskCount } from '../domain/task-counts';
 
 export const getTaskCounts = () => {
   const taskCounts: TaskCount[] = [
     {
-      queue: "email",
+      queue: 'email',
       counts: {
         queued: 19,
         processing: 2,
@@ -13,7 +13,7 @@ export const getTaskCounts = () => {
       },
     },
     {
-      queue: "exports",
+      queue: 'exports',
       counts: {
         queued: 19,
         processing: 2,

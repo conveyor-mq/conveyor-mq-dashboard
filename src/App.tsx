@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Container, Menu } from "semantic-ui-react";
-import { QueueList } from "./queues/views/queue-list";
-import { Queue } from "./queues/domain/queue";
-import { getQueues } from "./queues/actions/get-queues";
-import { getTaskCounts } from "./queues/actions/get-task-counts";
-import { TaskCount } from "./queues/domain/task-counts";
+import React, { useState, useEffect } from 'react';
+import { Container, Menu } from 'semantic-ui-react';
+import { QueueList } from './queues/views/queue-list';
+import { Queue } from './queues/domain/queue';
+import { getQueues } from './queues/actions/get-queues';
+import { getTaskCounts } from './queues/actions/get-task-counts';
+import { TaskCount } from './queues/domain/task-counts';
 
 export const App = () => {
   const [queues, setQueues] = useState<Queue[]>([]);

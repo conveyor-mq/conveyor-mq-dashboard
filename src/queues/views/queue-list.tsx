@@ -1,8 +1,8 @@
-import React from "react";
-import { Table } from "semantic-ui-react";
-import { Queue } from "../domain/queue";
-import { map, reduce } from "lodash";
-import { TaskCount, Counts } from "../domain/task-counts";
+import React from 'react';
+import { Table } from 'semantic-ui-react';
+import { map, reduce } from 'lodash';
+import { Queue } from '../domain/queue';
+import { TaskCount, Counts } from '../domain/task-counts';
 
 export const QueueList = ({
   queues,
@@ -16,7 +16,7 @@ export const QueueList = ({
     (acc, curr) => {
       return { ...acc, [curr.queue]: curr.counts };
     },
-    {}
+    {},
   );
   return (
     <div>

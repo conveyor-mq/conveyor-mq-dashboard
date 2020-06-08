@@ -1,6 +1,6 @@
-import React from "react";
-import { Task } from "./task";
-import { Table } from "semantic-ui-react";
+import React from 'react';
+import { Table } from 'semantic-ui-react';
+import { Task } from './task';
 
 export const TaskList = ({ tasks }: { tasks: Task[] }) => {
   return (
